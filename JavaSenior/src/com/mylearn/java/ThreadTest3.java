@@ -8,5 +8,6 @@ package com.mylearn.java;
 public class ThreadTest3 {
     public static void main(String[] args) {
         System.out.println("This is my test!");
+        System.out.println("This is my another test!");
     }
 }
