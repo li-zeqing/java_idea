@@ -4,7 +4,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author Zeqing Li Email:lizeqing77@163.com
- * @Description
+ * @Description 方式三：Lock锁 --- JDK5.0新增
  * @date 2022-04-08 15:29
  */
 
