@@ -15,8 +15,9 @@ class Window extends Thread {
     @Override
     public void run() {
 
-        synchronized (obj) {
+
             while (true) {
+                synchronized (obj) {
                 if (ticket > 0) {
                     System.out.println(getName() + ":卖票，票号为：" + ticket);
                     ticket--;
