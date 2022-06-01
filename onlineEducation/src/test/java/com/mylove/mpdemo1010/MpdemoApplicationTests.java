@@ -116,6 +116,17 @@ public class MpdemoApplicationTests {
         //ne 不等于 <> !=
 
 
+    }
 
+    @Test
+    public void testDelete() {
+
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper
+                .isNull("name")
+                .ge("age", 12)
+                .isNotNull("email");
+        int result = userMapper.delete(queryWrapper);
+        System.out.println("delete return count = " + result);
     }
 }
