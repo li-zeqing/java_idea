@@ -30,6 +30,7 @@ import java.util.List;
 @Api(description="讲师管理")
 @RestController
 @RequestMapping("/eduservice/teacher")
+@CrossOrigin //解决跨域
 public class EduTeacherController {
 
     //访问地址  http://localhost:8001/eduservice/teacher/findAll
@@ -136,7 +137,8 @@ public class EduTeacherController {
             //构建条件 le 小于等于
             wrapper.le("gmt_create",end);//注意 传入的是数据库中表的列名称 不是实体类的名称
         }
-
+        //排序
+        wrapper.orderByDesc("gmt_create");
 
         //调用方法实现分页
         //调用方法时，底层封装，把分页所有数据封装到pageTeacher对象里
