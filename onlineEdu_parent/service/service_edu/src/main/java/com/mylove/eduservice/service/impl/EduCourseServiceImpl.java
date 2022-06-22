@@ -3,6 +3,7 @@ package com.mylove.eduservice.service.impl;
 import com.mylove.eduservice.entity.EduCourse;
 import com.mylove.eduservice.entity.EduCourseDescription;
 import com.mylove.eduservice.entity.vo.CourseInfoVo;
+import com.mylove.eduservice.entity.vo.CoursePublishVo;
 import com.mylove.eduservice.mapper.EduCourseMapper;
 import com.mylove.eduservice.service.EduCourseDescriptionService;
 import com.mylove.eduservice.service.EduCourseService;
@@ -90,5 +91,13 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         description.setDescription(courseInfoVo.getDescription());
         courseDescriptionService.updateById(description);
 
+    }
+
+    //根据课程id查询课程确认信息
+    @Override
+    public CoursePublishVo publishCourseInfo(String id) {
+        //调用Mapper
+        CoursePublishVo publishCourseInfo = baseMapper.getPublishCourseInfo(id);
+        return publishCourseInfo;
     }
 }
